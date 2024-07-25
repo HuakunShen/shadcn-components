@@ -1,5 +1,3 @@
-"use client"
-
 import { CheckIcon, InfoCircledIcon, MoonIcon, ResetIcon, SunIcon } from "@radix-ui/react-icons"
 import { ThemeWrapper } from "@/components/theme/theme-wrapper"
 import { Button } from "@/components/ui/button"
