@@ -3,7 +3,7 @@ import * as ContextMenuPrimitive from "@radix-ui/react-context-menu"
 import {
   CheckIcon,
   ChevronRightIcon,
-  DotFilledIcon,
+  DotFilledIcon
 } from "@radix-ui/react-icons"
 
 import { cn } from "@/lib/utils"
@@ -198,5 +198,5 @@ export {
   ContextMenuSub,
   ContextMenuSubContent,
   ContextMenuSubTrigger,
-  ContextMenuRadioGroup,
+  ContextMenuRadioGroup
 }

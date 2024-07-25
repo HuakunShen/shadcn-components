@@ -1,45 +1,50 @@
 import path from "path"
-import react from "@vitejs/plugin-react-swc"
+import react from "@vitejs/plugin-react"
 import { defineConfig } from "vite"
 import dts from "vite-plugin-dts"
+import tailwindcss from "tailwindcss"
+import { visualizer } from "rollup-plugin-visualizer"
+import { peerDependencies, dependencies } from "./package.json"
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    react(),
-    dts({
-      rollupTypes: true,
-      compilerOptions: {
-        declaration: true,
-        declarationMap: true,
-        jsx: 4, // react-jsx
-        outDir: "dist",
-        moduleResolution: 2, // NodeJs
-      },
-    }),
-  ],
   build: {
     lib: {
-      entry: path.resolve(__dirname, "./src/index.ts"),
+      entry: ["./src/index.ts"],
       name: "shadcn-components",
-      fileName: (format) => `index.${format}.js`,
+      formats: ["es", "cjs"]
     },
     rollupOptions: {
-      external: ["react", "react-dom", "tailwindcss"],
-      output: {
-        globals: {
-          react: "React",
-          "react-dom": "ReactDOM",
-          tailwindcss: "tailwindcss",
-        },
-      },
+      external: [
+        ...Object.keys(peerDependencies),
+        ...Object.keys(dependencies)
+      ],
+      output: { preserveModules: true, exports: "named" },
+      plugins: [visualizer()]
     },
+    outDir: "dist",
     sourcemap: true,
     emptyOutDir: true,
+    chunkSizeWarningLimit: 500
   },
+  plugins: [
+    react({
+      jsxRuntime: "classic"
+    }),
+    dts({
+      include: ["src/**/*"]
+    })
+  ],
   resolve: {
     alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
+      "@": path.resolve(__dirname, "./src")
+    }
   },
+  css: {
+    postcss: {
+      plugins: [tailwindcss]
+    }
+  },
+  optimizeDeps: {
+    include: ["react", "react-dom"]
+  }
 })

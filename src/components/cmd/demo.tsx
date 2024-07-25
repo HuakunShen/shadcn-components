@@ -7,14 +7,13 @@ import {
   LinkedInLogoIcon,
   PersonIcon,
   RocketIcon,
-  TwitterLogoIcon,
-} from "@radix-ui/react-icons";
-import { cn } from "@/lib/utils";
+  TwitterLogoIcon
+} from "@radix-ui/react-icons"
+
 import {
-  ActionPanel,
+  CommandFooter,
   Command,
   CommandEmpty,
-  CommandFooter,
   CommandGroup,
   CommandInput,
   CommandItem,
@@ -22,29 +21,31 @@ import {
   CommandSeparator,
   CommandShortcut,
   VertifcalSeparator,
-} from ".";
-import { Button } from "../ui/button";
-import { useEffect, useRef, useState } from "react";
+  ActionPanel
+} from "."
+import { Button } from "../ui/button"
+import React from "react"
+import { cn } from "@/lib/utils"
 
 export function CommandDemo({ className }: { className?: string }) {
-  const [value, setValue] = useState("linear");
-  const inputRef = useRef<HTMLInputElement | null>(null);
-  const listRef = useRef(null);
+  const [value, setValue] = React.useState("linear")
+  const inputRef = React.useRef<HTMLInputElement | null>(null)
+  const listRef = React.useRef(null)
 
-  useEffect(() => {
-    inputRef?.current?.focus();
-  }, []);
+  React.useEffect(() => {
+    inputRef?.current?.focus()
+  }, [])
   return (
     <Command
       className={cn("rounded-lg border shadow-md", className)}
       value={value}
       onValueChange={(v) => {
-        console.log(v);
-        setValue(v);
+        console.log(v)
+        setValue(v)
       }}
     >
       <CommandInput placeholder="Type a command or search..." />
-      <CommandList>
+      <CommandList className="h-full">
         <CommandEmpty>No results found.</CommandEmpty>
         <CommandGroup heading="Suggestions">
           <CommandItem>
@@ -107,11 +108,11 @@ export function CommandDemo({ className }: { className?: string }) {
               { label: "Open Application", value: "open" },
               { label: "Show in Finder", value: "finder" },
               { label: "Show Info in Finder", value: "info" },
-              { label: "Add to Favorites", value: "favorites" },
+              { label: "Add to Favorites", value: "favorites" }
             ]}
           ></ActionPanel>
         </div>
       </CommandFooter>
     </Command>
-  );
+  )
 }

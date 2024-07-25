@@ -1,8 +1,18 @@
-import { CheckIcon, InfoCircledIcon, MoonIcon, ResetIcon, SunIcon } from "@radix-ui/react-icons"
+import {
+  CheckIcon,
+  InfoCircledIcon,
+  MoonIcon,
+  ResetIcon,
+  SunIcon
+} from "@radix-ui/react-icons"
 import { ThemeWrapper } from "@/components/theme/theme-wrapper"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger
+} from "@/components/ui/popover"
 import { Skeleton } from "@/components/ui/skeleton"
 import { useConfig } from "@/hooks/use-config"
 import { cn } from "@/lib/utils"
@@ -24,7 +34,10 @@ export function ThemeCustomizer({ children }: { children?: React.ReactNode }) {
           </Button>
         )}
       </PopoverTrigger>
-      <PopoverContent align="center" className="z-40 w-[340px] rounded-[0.5rem] p-6 bg-background">
+      <PopoverContent
+        align="center"
+        className="z-40 w-[340px] rounded-[0.5rem] p-6 bg-background"
+      >
         <Customizer />
       </PopoverContent>
     </Popover>
@@ -44,8 +57,12 @@ function Customizer() {
     <ThemeWrapper className="flex flex-col space-y-4 md:space-y-6">
       <div className="flex items-start pt-4 md:pt-0">
         <div className="space-y-1 pr-2">
-          <div className="font-semibold leading-none tracking-tight">Customize</div>
-          <div className="text-xs text-muted-foreground">Pick a style and color for your components.</div>
+          <div className="font-semibold leading-none tracking-tight">
+            Customize
+          </div>
+          <div className="text-xs text-muted-foreground">
+            Pick a style and color for your components.
+          </div>
         </div>
         <Button
           variant="ghost"
@@ -55,7 +72,7 @@ function Customizer() {
             setConfig({
               ...config,
               theme: "zinc",
-              radius: 0.5,
+              radius: 0.5
             })
           }}
         >
@@ -78,15 +95,22 @@ function Customizer() {
                 align="start"
                 alignOffset={-20}
               >
-                <p className="font-medium">What is the difference between the New York and Default style?</p>
-                <p>A style comes with its own set of components, animations, icons and more.</p>
-                <p>
-                  The <span className="font-medium">Default</span> style has larger inputs, uses lucide-react for icons
-                  and tailwindcss-animate for animations.
+                <p className="font-medium">
+                  What is the difference between the New York and Default style?
                 </p>
                 <p>
-                  The <span className="font-medium">New York</span> style ships with smaller buttons and cards with
-                  shadows. It uses icons from Radix Icons.
+                  A style comes with its own set of components, animations,
+                  icons and more.
+                </p>
+                <p>
+                  The <span className="font-medium">Default</span> style has
+                  larger inputs, uses lucide-react for icons and
+                  tailwindcss-animate for animations.
+                </p>
+                <p>
+                  The <span className="font-medium">New York</span> style ships
+                  with smaller buttons and cards with shadows. It uses icons
+                  from Radix Icons.
                 </p>
               </PopoverContent>
             </Popover>
@@ -96,7 +120,9 @@ function Customizer() {
               variant={"outline"}
               size="sm"
               onClick={() => setConfig({ ...config, style: "default" })}
-              className={cn(config.style === "default" && "border-2 border-primary")}
+              className={cn(
+                config.style === "default" && "border-2 border-primary"
+              )}
             >
               Default
             </Button>
@@ -104,7 +130,9 @@ function Customizer() {
               variant={"outline"}
               size="sm"
               onClick={() => setConfig({ ...config, style: "new-york" })}
-              className={cn(config.style === "new-york" && "border-2 border-primary")}
+              className={cn(
+                config.style === "new-york" && "border-2 border-primary"
+              )}
             >
               New York
             </Button>
@@ -124,19 +152,22 @@ function Customizer() {
                   onClick={() => {
                     setConfig({
                       ...config,
-                      theme: theme.name,
+                      theme: theme.name
                     })
                   }}
-                  className={cn("justify-start", isActive && "border-2 border-primary")}
+                  className={cn(
+                    "justify-start",
+                    isActive && "border-2 border-primary"
+                  )}
                   style={
                     {
-                      "--theme-primary": `hsl(${theme?.activeColor[mode === "dark" ? "dark" : "light"]})`,
+                      "--theme-primary": `hsl(${theme?.activeColor[mode === "dark" ? "dark" : "light"]})`
                     } as React.CSSProperties
                   }
                 >
                   <span
                     className={cn(
-                      "mr-1 flex h-5 w-5 shrink-0 -translate-x-1 items-center justify-center rounded-full bg-[--theme-primary]",
+                      "mr-1 flex h-5 w-5 shrink-0 -translate-x-1 items-center justify-center rounded-full bg-[--theme-primary]"
                     )}
                   >
                     {isActive && <CheckIcon className="h-4 w-4 text-white" />}
@@ -161,10 +192,13 @@ function Customizer() {
                   onClick={() => {
                     setConfig({
                       ...config,
-                      radius: parseFloat(value),
+                      radius: parseFloat(value)
                     })
                   }}
-                  className={cn(config.radius === parseFloat(value) && "border-2 border-primary")}
+                  className={cn(
+                    config.radius === parseFloat(value) &&
+                      "border-2 border-primary"
+                  )}
                 >
                   {value}
                 </Button>

@@ -6,8 +6,17 @@ export {
   CommandItem,
   CommandList,
   CommandSeparator,
-  CommandShortcut,
+  CommandShortcut
 } from "@/components/ui/command"
-export { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover"
-export { CommandFooter, VertifcalSeparator, ActionPanel, type ActionItemProps } from "./lib"
+export {
+  Popover,
+  PopoverContent,
+  PopoverTrigger
+} from "@/components/ui/popover"
+export {
+  CommandFooter,
+  VertifcalSeparator,
+  ActionPanel,
+  type ActionItemProps
+} from "./lib"
 export { CommandDemo } from "./demo"
