@@ -1,1 +1,2 @@
-/* @import url("shadcn-components/css"); */
+@import url("@shadcn-components/react/css");
+@import url("@shadcn-components/react/themes");

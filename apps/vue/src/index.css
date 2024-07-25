@@ -1,1 +1,5 @@
-@import url("@shadcn-components/vue/css");
+/* @import url("@shadcn-components/vue/css"); */
+/* @import url("@shadcn-components/vue/themes"); */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

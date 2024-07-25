@@ -3,10 +3,8 @@ import {
   ThemeProvider,
   ThemeCustomizer,
   ThemeWrapper,
-  TooltipProvider
-} from "@shadcn-components/react"
-import "shadcn-components/themes"
-import 'shadcn-components/css'
+  TooltipProvider,
+} from "@shadcn-components/react";
 
 function App() {
   return (
@@ -20,7 +18,7 @@ function App() {
         <Button>Hello</Button>
       </ThemeWrapper>
     </ThemeProvider>
-  )
+  );
 }
 
-export default App
+export default App;
