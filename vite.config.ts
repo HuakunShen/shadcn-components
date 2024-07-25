@@ -21,7 +21,6 @@ export default defineConfig({
       output: { preserveModules: true, exports: "named" },
       plugins: [visualizer()]
     },
-    outDir: "dist",
     sourcemap: true,
     emptyOutDir: true,
     chunkSizeWarningLimit: 500

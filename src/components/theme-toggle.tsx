@@ -1,4 +1,5 @@
-import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
+// import { Moon, Sun } from "lucide-react"
+
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -6,7 +7,8 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger
 } from "@/components/ui/dropdown-menu"
-import { useTheme } from "./theme-provider"
+import { useTheme } from "@/components/theme-provider"
+import { MoonIcon, SunIcon } from "@radix-ui/react-icons"
 
 export function ModeToggle() {
   const { setTheme } = useTheme()

@@ -1,4 +1,2 @@
-export * from "@/components/theme/theme-provider"
-export * from "@/components/theme/theme-toggle"
-export * from "@/components/theme/theme-customizer"
-export * from "@/components/theme/theme-wrapper"
+export { ThemeProvider, useTheme } from "./theme-provider"
+export { ModeToggle } from "./theme-toggle"

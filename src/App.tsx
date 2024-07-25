@@ -1,10 +1,10 @@
-import React from "react"
 import { ThemeProvider } from "@/components/theme"
 import { ThemeCustomizer } from "@/components/theme/theme-customizer"
 import { Button } from "@/components/ui/button"
 import { TooltipProvider } from "@/components/ui/tooltip"
 import "@/registry/themes.css"
 import { ThemeWrapper } from "@/components/theme/theme-wrapper"
+import React from "react"
 
 function App() {
   return (
