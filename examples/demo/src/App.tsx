@@ -6,6 +6,7 @@ import {
   TooltipProvider
 } from "shadcn-components"
 import "shadcn-components/themes"
+import 'shadcn-components/css'
 
 function App() {
   return (
