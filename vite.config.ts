@@ -8,7 +8,6 @@ import { peerDependencies, dependencies } from "./package.json"
 
 export default defineConfig({
   build: {
-    outDir: "dist",
     lib: {
       entry: ["./src/index.ts"],
       name: "shadcn-components",
