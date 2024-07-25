@@ -39,7 +39,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      "@ui": path.resolve(__dirname, "./src"),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
 })

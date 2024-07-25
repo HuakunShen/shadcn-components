@@ -8,9 +8,8 @@ import {
   PersonIcon,
   RocketIcon,
   TwitterLogoIcon,
-} from "@radix-ui/react-icons"
-import { cn } from "@ui/lib/utils"
-import React from "react"
+} from "@radix-ui/react-icons";
+import { cn } from "@/lib/utils";
 import {
   ActionPanel,
   Command,
@@ -23,24 +22,25 @@ import {
   CommandSeparator,
   CommandShortcut,
   VertifcalSeparator,
-} from "."
-import { Button } from "../ui/button"
+} from ".";
+import { Button } from "../ui/button";
+import { useEffect, useRef, useState } from "react";
 
 export function CommandDemo({ className }: { className?: string }) {
-  const [value, setValue] = React.useState("linear")
-  const inputRef = React.useRef<HTMLInputElement | null>(null)
-  const listRef = React.useRef(null)
+  const [value, setValue] = useState("linear");
+  const inputRef = useRef<HTMLInputElement | null>(null);
+  const listRef = useRef(null);
 
-  React.useEffect(() => {
-    inputRef?.current?.focus()
-  }, [])
+  useEffect(() => {
+    inputRef?.current?.focus();
+  }, []);
   return (
     <Command
       className={cn("rounded-lg border shadow-md", className)}
       value={value}
       onValueChange={(v) => {
-        console.log(v)
-        setValue(v)
+        console.log(v);
+        setValue(v);
       }}
     >
       <CommandInput placeholder="Type a command or search..." />
@@ -113,5 +113,5 @@ export function CommandDemo({ className }: { className?: string }) {
         </div>
       </CommandFooter>
     </Command>
-  )
+  );
 }

@@ -1,9 +1,9 @@
-import { ThemeProvider } from "@ui/components/theme"
-import { ThemeCustomizer } from "@ui/components/theme/theme-customizer"
-import { Button } from "@ui/components/ui/button"
-import { TooltipProvider } from "@ui/components/ui/tooltip"
-import "@ui/registry/themes.css"
-import { ThemeWrapper } from "@ui/components/theme/theme-wrapper"
+import { ThemeProvider } from "@/components/theme"
+import { ThemeCustomizer } from "@/components/theme/theme-customizer"
+import { Button } from "@/components/ui/button"
+import { TooltipProvider } from "@/components/ui/tooltip"
+import "@/registry/themes.css"
+import { ThemeWrapper } from "@/components/theme/theme-wrapper"
 
 function App() {
   return (

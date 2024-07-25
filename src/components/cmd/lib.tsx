@@ -1,27 +1,47 @@
-import { Button } from "@ui/components/ui/button"
-import { Command, CommandEmpty, CommandGroup, CommandInput, CommandItem, CommandList } from "@ui/components/ui/command"
-import { Popover, PopoverContent, PopoverTrigger } from "@ui/components/ui/popover"
-import { cn } from "@ui/lib/utils"
-import React from "react"
+import { Button } from "@/components/ui/button";
+import {
+  Command,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandItem,
+  CommandList,
+} from "@/components/ui/command";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import { cn } from "@/lib/utils";
+import { RefObject, ReactNode, useEffect, useState } from "react";
 
-export function CommandFooter({ children, className }: { children: React.ReactNode; className?: string }) {
+export function CommandFooter({
+  children,
+  className,
+}: {
+  children: ReactNode;
+  className?: string;
+}) {
   return (
     <div
-      className={cn("flex items-center w-full rounded-b-lg border-t-[1px] bottom-0 justify-between px-1", className)}
+      className={cn(
+        "flex items-center w-full rounded-b-lg border-t-[1px] bottom-0 justify-between px-1",
+        className
+      )}
     >
       {children}
     </div>
-  )
+  );
 }
 
 export function VertifcalSeparator() {
-  return <hr className="h-6 w-[1px] bg-muted mt-2 mb-2" />
+  return <hr className="h-6 w-[1px] bg-muted mt-2 mb-2" />;
 }
 
 export type ActionItemProps = {
-  label: string
-  value: string
-}
+  label: string;
+  value: string;
+};
 
 export function ActionPanel({
   inputRef,
@@ -30,41 +50,41 @@ export function ActionPanel({
   actionItems,
   children,
 }: {
-  inputRef: React.RefObject<HTMLInputElement>
-  listRef: React.RefObject<HTMLElement>
-  selectedValue: string
-  actionItems: ActionItemProps[]
-  children?: React.ReactNode
+  inputRef: RefObject<HTMLInputElement>;
+  listRef: RefObject<HTMLElement>;
+  selectedValue: string;
+  actionItems: ActionItemProps[];
+  children?: ReactNode;
 }) {
-  const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState("")
+  const [open, setOpen] = useState(false);
+  const [value, setValue] = useState("");
 
-  React.useEffect(() => {
+  useEffect(() => {
     function listener(e: KeyboardEvent) {
       if (e.key === "k" && e.metaKey) {
-        e.preventDefault()
-        setOpen((o) => !o)
+        e.preventDefault();
+        setOpen((o) => !o);
       }
     }
 
-    document.addEventListener("keydown", listener)
+    document.addEventListener("keydown", listener);
 
     return () => {
-      document.removeEventListener("keydown", listener)
-    }
-  }, [])
+      document.removeEventListener("keydown", listener);
+    };
+  }, []);
 
-  React.useEffect(() => {
-    const el = listRef.current
+  useEffect(() => {
+    const el = listRef.current;
 
-    if (!el) return
+    if (!el) return;
 
     if (open) {
-      el.style.overflow = "hidden"
+      el.style.overflow = "hidden";
     } else {
-      el.style.overflow = ""
+      el.style.overflow = "";
     }
-  }, [open, listRef])
+  }, [open, listRef]);
 
   return (
     <Popover open={open} onOpenChange={setOpen} modal>
@@ -80,8 +100,8 @@ export function ActionPanel({
       <PopoverContent
         className="w-[200px] p-0"
         onCloseAutoFocus={(e) => {
-          e.preventDefault()
-          inputRef?.current?.focus()
+          e.preventDefault();
+          inputRef?.current?.focus();
         }}
       >
         <Command>
@@ -94,8 +114,8 @@ export function ActionPanel({
                   key={action.value}
                   value={action.value}
                   onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue)
-                    setOpen(false)
+                    setValue(currentValue === value ? "" : currentValue);
+                    setOpen(false);
                   }}
                 >
                   {action.label}
@@ -107,5 +127,5 @@ export function ActionPanel({
         </Command>
       </PopoverContent>
     </Popover>
-  )
+  );
 }
