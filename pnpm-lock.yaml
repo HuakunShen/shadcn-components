@@ -88,6 +88,9 @@ importers:
         specifier: ^0.2.1
         version: 0.2.1(tailwindcss@3.4.6)
     devDependencies:
+      '@shadcn-components/svelte':
+        specifier: workspace:*
+        version: link:../../packages/svelte
       '@sveltejs/vite-plugin-svelte':
         specifier: ^3.1.1
         version: 3.1.1(svelte@4.2.18)(vite@5.3.4(@types/node@20.14.12))
@@ -109,9 +112,6 @@ importers:
       svelte-check:
         specifier: ^3.8.4
         version: 3.8.4(@babel/core@7.24.9)(postcss-load-config@5.1.0(postcss@8.4.40))(postcss@8.4.40)(svelte@4.2.18)
-      svelte-lib:
-        specifier: workspace:*
-        version: link:../../packages/svelte
       tailwindcss:
         specifier: ^3.4.4
         version: 3.4.6

@@ -5,7 +5,7 @@ const config: Config = {
   darkMode: ["class"],
   content: [
     "./src/**/*.{html,js,svelte,ts}",
-    "./node_modules/svelte-lib/dist/**/*.{html,js,svelte,ts}",
+    "./node_modules/@shadcn-components/svelte/dist/**/*.{html,js,svelte,ts}",
   ],
   safelist: ["dark"],
   theme: {

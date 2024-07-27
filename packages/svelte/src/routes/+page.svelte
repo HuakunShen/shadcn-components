@@ -1,9 +1,7 @@
-<script>
-  import { Button } from "$lib/components/ui/button";
+<script lang="ts">
   import { ModeWatcher } from "mode-watcher";
-  import { ModeToggle, ModeDropdown } from "$lib/components/theme";
+  import CommandDemo from "@/components/cmdk/demo.svelte";
 </script>
 
 <ModeWatcher />
-<Button>hello</Button>
-<ModeToggle />
+<CommandDemo class="w-[45em] h-[30em]" />

@@ -51,3 +51,4 @@ export {
   TooltipTrigger,
 } from "./components/ui/tooltip";
 export * from "./components/theme";
+export * from "./components/cmdk";
