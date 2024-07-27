@@ -75,9 +75,18 @@ importers:
 
   apps/svelte:
     dependencies:
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
       mode-watcher:
         specifier: ^0.4.0
         version: 0.4.0(svelte@4.2.18)
+      tailwind-merge:
+        specifier: ^2.4.0
+        version: 2.4.0
+      tailwind-variants:
+        specifier: ^0.2.1
+        version: 0.2.1(tailwindcss@3.4.6)
     devDependencies:
       '@sveltejs/vite-plugin-svelte':
         specifier: ^3.1.1
