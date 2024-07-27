@@ -5,6 +5,9 @@ import {
   ThemeWrapper,
   TooltipProvider,
 } from "@shadcn-components/react";
+import { CommandDemo } from "@shadcn-components/react";
+import "@shadcn-components/react/css";
+import "@shadcn-components/react/themes";
 
 function App() {
   return (
@@ -16,6 +19,7 @@ function App() {
       </ThemeWrapper>
       <ThemeWrapper>
         <Button>Hello</Button>
+        <CommandDemo />
       </ThemeWrapper>
     </ThemeProvider>
   );

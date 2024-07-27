@@ -1,2 +1,3 @@
-@import url("@shadcn-components/react/css");
-@import url("@shadcn-components/react/themes");
+/* @tailwind base; */
+@tailwind components;
+@tailwind utilities;
