@@ -5,7 +5,7 @@ export default {
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx,vue}",
-    "node_modules/@shadcn-components/vue/dist/**/*.{js,ts,jsx,tsx,vue}"
+    "node_modules/@shadcn-components/vue/dist/**/*.{js,ts,jsx,tsx,vue}",
   ],
   theme: {
     extend: {},
