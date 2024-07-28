@@ -1,16 +1,21 @@
 <script>
-  import "./app.css";
-  import {
-    Button,
-    ModeToggle,
-    ModeDropdown,
-    CmdkDemo,
-  } from "@shadcn-components/svelte";
-  import { ModeWatcher } from "mode-watcher";
+	import "./app.css"
+	import {
+		Button,
+		CmdkDemo,
+		ModeDropdown,
+		ModeToggle,
+		ThemeCustomizer,
+		ThemeWrapper
+	} from "@shadcn-components/svelte"
+	// import "@shadcn-components/svelte/themes"
+	import { ModeWatcher } from "mode-watcher"
 </script>
 
 <ModeWatcher />
-<Button>hihihihi</Button>
-<ModeToggle />
-<ModeDropdown />
-<CmdkDemo class="w-[45em] h-[30em]" />
+<ThemeWrapper>
+	<ThemeCustomizer />
+	<Button>Hello</Button>
+	<ModeToggle />
+	<CmdkDemo class="h-[30em] w-[45em]" />
+</ThemeWrapper>

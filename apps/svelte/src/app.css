@@ -1,3 +1,4 @@
+@import url("@shadcn-components/svelte/themes");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -72,6 +73,7 @@
   * {
     @apply border-border;
   }
+
   body {
     @apply bg-background text-foreground;
   }

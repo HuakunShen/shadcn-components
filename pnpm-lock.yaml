@@ -14,9 +14,12 @@ importers:
       prettier:
         specifier: ^3.2.5
         version: 3.2.5
+      prettier-plugin-svelte:
+        specifier: ^3.2.6
+        version: 3.2.6(prettier@3.2.5)(svelte@4.2.18)
       prettier-plugin-tailwindcss:
         specifier: ^0.6.5
-        version: 0.6.5(@ianvs/prettier-plugin-sort-imports@4.3.1(@vue/compiler-sfc@3.4.34)(prettier@3.2.5))(prettier@3.2.5)
+        version: 0.6.5(@ianvs/prettier-plugin-sort-imports@4.3.1(@vue/compiler-sfc@3.4.34)(prettier@3.2.5))(prettier-plugin-svelte@3.2.6(prettier@3.2.5)(svelte@4.2.18))(prettier@3.2.5)
       turbo:
         specifier: ^2.0.9
         version: 2.0.9
@@ -408,6 +411,9 @@ importers:
       paneforge:
         specifier: ^0.0.5
         version: 0.0.5(svelte@4.2.18)
+      svelte-persisted-store:
+        specifier: ^0.11.0
+        version: 0.11.0(svelte@4.2.18)
       svelte-radix:
         specifier: ^1.1.0
         version: 1.1.0(svelte@4.2.18)
@@ -454,6 +460,9 @@ importers:
       publint:
         specifier: ^0.1.9
         version: 0.1.16
+      shx:
+        specifier: ^0.3.4
+        version: 0.3.4
       svelte:
         specifier: ^4.2.7
         version: 4.2.18
@@ -3951,6 +3960,12 @@ packages:
     resolution: {integrity: sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==}
     engines: {node: '>= 0.8.0'}
 
+  prettier-plugin-svelte@3.2.6:
+    resolution: {integrity: sha512-Y1XWLw7vXUQQZmgv1JAEiLcErqUniAF2wO7QJsw8BVMvpLET2dI5WpEIEJx1r11iHVdSMzQxivyfrH9On9t2IQ==}
+    peerDependencies:
+      prettier: ^3.0.0
+      svelte: ^3.2.0 || ^4.0.0-next.0 || ^5.0.0-next.0
+
   prettier-plugin-tailwindcss@0.6.5:
     resolution: {integrity: sha512-axfeOArc/RiGHjOIy9HytehlC0ZLeMaqY09mm8YCkMzznKiDkwFzOpBvtuhuv3xG5qB73+Mj7OCe2j/L1ryfuQ==}
     engines: {node: '>=14.21.3'}
@@ -4387,6 +4402,12 @@ packages:
     engines: {node: ^12.20 || ^14.13.1 || >= 16}
     peerDependencies:
       svelte: ^3.19.0 || ^4.0.0
+
+  svelte-persisted-store@0.11.0:
+    resolution: {integrity: sha512-9RgJ5DrawGyyfK22A80cfu8Jose3CV8YjEZKz9Tn94rQ0tWyEmYr+XI+wrVF6wjRbW99JMDSVcFRiM3XzVJj/w==}
+    engines: {node: '>=0.14'}
+    peerDependencies:
+      svelte: ^3.48.0 || ^4.0.0 || ^5.0.0-next.0
 
   svelte-preprocess@5.1.4:
     resolution: {integrity: sha512-IvnbQ6D6Ao3Gg6ftiM5tdbR6aAETwjhHV+UKGf5bHGYR69RQvF1ho0JKPcbUON4vy4R7zom13jPjgdOWCQ5hDA==}
@@ -8548,11 +8569,17 @@ snapshots:
 
   prelude-ls@1.2.1: {}
 
-  prettier-plugin-tailwindcss@0.6.5(@ianvs/prettier-plugin-sort-imports@4.3.1(@vue/compiler-sfc@3.4.34)(prettier@3.2.5))(prettier@3.2.5):
+  prettier-plugin-svelte@3.2.6(prettier@3.2.5)(svelte@4.2.18):
+    dependencies:
+      prettier: 3.2.5
+      svelte: 4.2.18
+
+  prettier-plugin-tailwindcss@0.6.5(@ianvs/prettier-plugin-sort-imports@4.3.1(@vue/compiler-sfc@3.4.34)(prettier@3.2.5))(prettier-plugin-svelte@3.2.6(prettier@3.2.5)(svelte@4.2.18))(prettier@3.2.5):
     dependencies:
       prettier: 3.2.5
     optionalDependencies:
       '@ianvs/prettier-plugin-sort-imports': 4.3.1(@vue/compiler-sfc@3.4.34)(prettier@3.2.5)
+      prettier-plugin-svelte: 3.2.6(prettier@3.2.5)(svelte@4.2.18)
 
   prettier@3.2.5: {}
 
@@ -8958,6 +8985,10 @@ snapshots:
       - sugarss
 
   svelte-hmr@0.16.0(svelte@4.2.18):
+    dependencies:
+      svelte: 4.2.18
+
+  svelte-persisted-store@0.11.0(svelte@4.2.18):
     dependencies:
       svelte: 4.2.18
 
