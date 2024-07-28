@@ -15,11 +15,30 @@ import {
 	CommandItem,
 	CommandList,
 	CommandSeparator,
-	CommandShortcut
+	CommandShortcut,
+	ThemeCustomizer2,
+	updateTheme,
+	type ThemeConfig
 } from "@shadcn-components/vue"
+import { onMounted, reactive, watch } from "vue"
+
+const themeConfig = reactive<ThemeConfig>({
+	theme: "neutral",
+	radius: 0.5,
+	lightMode: "auto"
+})
+watch(themeConfig, (newVal, oldVal) => {
+	updateTheme(newVal)
+})
 </script>
 
 <template>
+	<pre>{{ themeConfig }}</pre>
+	<ThemeCustomizer2
+		v-model:lightMode="themeConfig.lightMode"
+		v-model:theme="themeConfig.theme"
+		v-model:radius="themeConfig.radius"
+	/>
 	<Command class="max-w-[450px] rounded-lg border shadow-md">
 		<CommandInput placeholder="Type a command or search..." />
 		<CommandList>

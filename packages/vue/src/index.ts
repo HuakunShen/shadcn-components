@@ -1,4 +1,5 @@
 import "./assets/index.css"
+import { ThemeConfig, updateTheme } from "@/stores/config"
 import ThemeCustomizer from "./components/theme/ThemeCustomizer.vue"
 import Accordion from "./components/ui/accordion/Accordion.vue"
 import AccordionContent from "./components/ui/accordion/AccordionContent.vue"
@@ -493,6 +494,9 @@ export {
 	PinInputSeparator,
 	PinInputInput,
 	// ThemeCustomizer,
+	ThemeCustomizer,
+	updateTheme,
+	type ThemeConfig,
 	Badge
 }
 
