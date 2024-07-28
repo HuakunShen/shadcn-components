@@ -493,7 +493,6 @@ export {
 	PinInputGroup,
 	PinInputSeparator,
 	PinInputInput,
-	// ThemeCustomizer,
 	ThemeCustomizer,
 	updateTheme,
 	type ThemeConfig,

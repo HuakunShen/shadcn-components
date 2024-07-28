@@ -16,7 +16,7 @@ import {
 	CommandList,
 	CommandSeparator,
 	CommandShortcut,
-	ThemeCustomizer2,
+	ThemeCustomizer,
 	updateTheme,
 	type ThemeConfig
 } from "@shadcn-components/vue"
@@ -34,7 +34,7 @@ watch(themeConfig, (newVal, oldVal) => {
 
 <template>
 	<pre>{{ themeConfig }}</pre>
-	<ThemeCustomizer2
+	<ThemeCustomizer
 		v-model:lightMode="themeConfig.lightMode"
 		v-model:theme="themeConfig.theme"
 		v-model:radius="themeConfig.radius"
