@@ -1,15 +1,28 @@
 <script lang="ts">
 	import CommandDemo from "@/components/cmdk/demo.svelte"
 	import { ThemeCustomizer, ThemeWrapper } from "@/components/theme"
+	import type { ThemeConfig } from "@/components/theme/types"
 	import { Button } from "@/components/ui/button"
+	import { updateTheme } from "@/utils"
+	import { config as themeConfig } from "$lib/stores/config"
+	import { get } from "svelte/store"
+
+	let config: ThemeConfig = {
+		radius: get(themeConfig).radius,
+		theme: get(themeConfig).theme,
+		lightMode: get(themeConfig).lightMode
+	}
+
+	$: themeConfig.set(config)
 </script>
 
+<ThemeCustomizer bind:config />
 <ThemeWrapper>
-	<div class="p-4 flex flex-col gap-2">
+	<pre>{JSON.stringify(config, null, 2)}</pre>
+	<div class="flex flex-col gap-2 p-4">
 		<div>
-			<ThemeCustomizer />
 			<Button>Hello</Button>
 		</div>
-		<CommandDemo class="w-[45em] h-[30em]" />
+		<CommandDemo class="h-[30em] w-[45em]" />
 	</div>
 </ThemeWrapper>
