@@ -11,10 +11,15 @@
 	"dependencies": {
 		"@radix-icons/vue": "^1.0.0",
 		"@shadcn-components/vue": "workspace:*",
+		"class-variance-authority": "^0.7.0",
+		"clsx": "^2.1.1",
+		"radix-vue": "^1.9.2",
+		"tailwind-merge": "^2.4.0",
 		"tailwindcss-animate": "^1.0.7",
 		"vue": "^3.4.31"
 	},
 	"devDependencies": {
+		"@types/node": "^20.14.12",
 		"@vitejs/plugin-vue": "^5.0.5",
 		"autoprefixer": "^10.4.19",
 		"postcss": "^8.4.38",

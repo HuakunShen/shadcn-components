@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import { Button } from "@/components/ui/button";
-import { Alert } from "@/components/ui/alert";
+import { Alert } from "@/components/ui/alert"
+import { Button } from "@/components/ui/button"
 </script>
 
 <template>
-  <Button>Hello</Button>
-  <Alert>Alert</Alert>
+	<Button>Hello</Button>
+	<Alert>Alert</Alert>
 </template>
